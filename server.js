@@ -11,7 +11,7 @@ const app = express();
 // DATABASE CONFIGURATION
 
 const DATABASE_URL =
-  "mmongodb+srv://admin:abcd123@cluster0.emozf.mongodb.net/shoecollection?retryWrites=true&w=majority"
+  "mongodb+srv://admin:abcd123@cluster0.emozf.mongodb.net/shoecollection?retryWrites=true&w=majority"
 const db = mongoose.connection
 mongoose.connect(DATABASE_URL)
 
