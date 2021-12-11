@@ -1,24 +1,40 @@
 // REQUIRE DEPENDENCIES
 const express = require('express');
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const methodOverride = require('method-override');
+const shoesController = require('./controllers/shoes');
+
 
 
 // INTIALIZE EXPRESS APP
 const app = express();
 
 // CONFIGURE SETTINGS
+require('dotenv').config();
 
 // DATABASE CONFIGURATION
+mongoose.connect(process.env.DATABASE_URL);
 
-const DATABASE_URL =
-  "mongodb+srv://admin:abcd123@cluster0.emozf.mongodb.net/shoecollection?retryWrites=true&w=majority"
-const db = mongoose.connection
-mongoose.connect(DATABASE_URL)
+// CALLBACK
+const db = mongoose.connection;
 
-const PORT = 3000;
+// EVENT LISTENERS
+db.on('connected', () => console.log('Connected to MongoDB'));
+db.on('error', (err) => console.log('MongoDB Error: ' + err.message));
 
 
+// MIDDLEWARE
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
+app.use(express.static('public'));
+
+
+// ROUTES
+
+app.use('/shoecollection', shoesController);
+
+const PORT = process.env.PORT; 
 
 app.listen(PORT, () => {
-    console.log('BADADADAAAA');
-})
+    console.log('Express is listening on port: ' + PORT);
+});
