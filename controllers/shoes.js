@@ -11,7 +11,7 @@ const Shoes = require('../models/shoes');
 shoesRouter.get('/', (req, res) => {
     Shoes.find({}, (err, allShoes) => {
       res.render("index.ejs", {
-        shoe: allShoes,
+        shoe: allShoes
       });
     });
 });
@@ -22,24 +22,39 @@ shoesRouter.get('/', (req, res) => {
   
   // Delete
   shoesRouter.delete('/:id', (req, res) => {
-    Shoes.findByIdAndDelete(req.params.id, (err, copyOfDeletedShoes) => {
+    Shoes.findByIdAndRemove(req.params.id, (err, copyOfDeletedShoes) => {
     res.redirect("/shoecollection")
     });
   });
 
   // Update
   shoesRouter.put('/:id', (req, res) => {
-    Shoes.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedShoes) => {
-        res.redirect(`/shoecollection/${req.params.id}`);
-    });
+    Shoes.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      },
+      (error, updatedShoes) => {
+        res.redirect(`/shoecollection/${req.params.id}`)
+      }
+    )
   });
 
   // Create
   shoesRouter.post('/', (req, res) => {
-    Shoes.create(req, body, (err, shoes) => {
-    res.redirect('/shoecollection')
-  });
-});
+    if (req.body.completed === "on") {
+      req.body.completed = true
+    } else {
+      req.body.completed = false
+    }
+  
+    Shoes.create(req.body, (error, createdShoes) => {
+      res.redirect("/shoecollection")
+    })
+  })
+  
+
 // Edit
   shoesRouter.get('/:id/edit', (req, res) => {
     Shoes.findById(req.params.id, (err, editShoes) => {
@@ -49,7 +64,7 @@ shoesRouter.get('/', (req, res) => {
 // Show
   shoesRouter.get('/:id', (req, res) => {
     Shoes.findById(req.params.id, (err, foundShoes) => {
-    res.send("show.ejs", {
+    res.render("show.ejs", {
       shoe: foundShoes
     });
 });

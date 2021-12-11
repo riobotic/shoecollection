@@ -9,11 +9,20 @@
   <body>
     <nav>
         <a href="/shoecollection/new">Add a New Pair of Shoes</a>
-      </nav>
+      </nav
     <h1>My Shoe Collection</h1>
     <% shoe.forEach(allShoes => { %>
+      <li>
+        <a href="/shoecollection/<%=allShoes._id %>"> <%=allShoes.brand %> </a>
+        <form>
+          <input type="submit" value="DELETE" />
+        </form>
+      </li>
+        <img src="<%=allShoes.image %>" alt="<%= allShoes.image %>"></a>
+        <p>Price: </p>
         <li><%=allShoes.price; %></li>
+        <p>Brand:</p>
         <li><%=allShoes.brand; %></li>
         <% }) %>
   </body>
-</html>
+</html>  

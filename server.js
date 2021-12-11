@@ -3,8 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const shoesController = require('./controllers/shoes');
-
-
+const mongoURI = process.env.MONGODB_URI
 
 // INTIALIZE EXPRESS APP
 const app = express();
