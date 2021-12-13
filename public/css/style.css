@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    background-color: white;
+    /* border: 2px solid red; */
+    /* create a border around a box or padding, the sizing of the border or padding will be within the box.  */
+}
+
+body {
+    max-width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+}
+
+img {
+    width: 25%;
+    height: auto;
+      };

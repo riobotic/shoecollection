@@ -8,9 +8,10 @@
 </head>
 <body>
     <h1>Edit Shoe</h1>
-    <form action="/shoecollection/<%= shoes._id %>?_method=PUT" method="POST"><br>
-        Price: <input type="text" name="price" value="<%= edit.price %>"><br>
-        Brand: <input type="text" name="brand" value="<%= edit.brand %>"><br>
+    <form action="/shoecollection/<%= shoe._id %>?_method=PUT" method="POST"><br />
+        Price: <input type="text" name="price" value="<%= shoe.price %>"><br />
+        Brand: <input type="text" name="brand" value="<%= shoe.brand %>"><br />
+        Image: <input type="text" name="image" value="<%= shoe.image %>"><br />
         <input type="submit" value="Edit Shoe">  
     </form>
 </body>

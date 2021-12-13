@@ -3,20 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mario's Shoes</title>
+    <h1>My Shoe Collection</h1>
+    <nav>
+      <a href="/shoecollection/new">Add a New Pair of Shoes</a>
+    </nav>
   </head>
   <body>
-    <nav>
-        <a href="/shoecollection/new">Add a New Pair of Shoes</a>
-      </nav
-    <h1>My Shoe Collection</h1>
     <% shoe.forEach(allShoes => { %>
       <li>
-        <a href="/shoecollection/<%=allShoes._id %>"> <%=allShoes.brand %> </a>
-        <form>
-          <input type="submit" value="DELETE" />
+        <form action="/shoecollection/<%= allShoes._id %>?_method=DELETE" method="POST">
+          <input type="submit" value="DELETE">
         </form>
+        <a href="/shoecollection/<%=allShoes._id %>/edit">Edit</a>
       </li>
         <img src="<%=allShoes.image %>" alt="<%= allShoes.image %>"></a>
         <p>Price: </p>
@@ -25,4 +26,4 @@
         <li><%=allShoes.brand; %></li>
         <% }) %>
   </body>
-</html>  
+</html>
