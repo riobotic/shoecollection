@@ -2,19 +2,11 @@
 
 
 * {
-    padding: 0px;
     background-color: white;
 };
 
-body {
-    max-width: 70%;
-    text-align: center;
-    margin: 0 auto;
-    font-family: 'Open Sans', sans-serif;
-};
-
-image {
-    width: 40%;
-    height: 55%;
+img {
+    width: 400px;
+    height: 350px;
 };
 

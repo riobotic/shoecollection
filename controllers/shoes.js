@@ -75,5 +75,5 @@ shoesRouter.get('/', (req, res) => {
     });
   });
 }); 
-
+// TEST
   module.exports = shoesRouter;
