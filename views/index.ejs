@@ -12,6 +12,7 @@
     </nav>
   </head>
   <body>
+    <div class="index">
     <% shoe.forEach(allShoes => { %>
       <li>
         <form action="/shoecollection/<%= allShoes._id %>?_method=DELETE" method="POST">
@@ -25,5 +26,6 @@
         <p>Brand:</p>
         <li><%=allShoes.brand; %></li>
         <% }) %>
+      </div>
   </body>
 </html>
