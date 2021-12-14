@@ -15,7 +15,7 @@ shoesRouter.get('/', (req, res) => {
     });
   });
 });
-  // New
+// New
   shoesRouter.get("/new", (req, res) => {
     res.render("new.ejs")
   });

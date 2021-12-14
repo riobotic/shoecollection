@@ -37,11 +37,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 app.use(methodOverride('_method'));
 
-
-// ROUTES
-
 app.use('/shoecollection', shoesController);
-
-
 
 app.listen(PORT, () => console.log("express is listening on:", PORT))
