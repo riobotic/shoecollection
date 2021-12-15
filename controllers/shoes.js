@@ -27,7 +27,7 @@ shoesRouter.get('/', (req, res) => {
     });
   });
 
-  // Update
+// Update
   shoesRouter.put('/:id', (req, res) => {
     if (req.body.completed === "on") {
       req.body.completed = true
@@ -46,7 +46,7 @@ shoesRouter.get('/', (req, res) => {
       });
     });
 
-  // Create
+    // Create
   shoesRouter.post('/', (req, res) => {
     if (req.body.completed === "on") {
       req.body.completed = true
@@ -75,5 +75,5 @@ shoesRouter.get('/', (req, res) => {
     });
   });
 }); 
-// TEST
+
   module.exports = shoesRouter;

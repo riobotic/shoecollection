@@ -7,25 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mario's Shoes</title>
     <h1>My Shoe Collection</h1>
+    <div class="addbutton"><a href="/shoecollection/new">Add a New Pair of Shoes</a></div>
     <nav>
-      <a href="/shoecollection/new">Add a New Pair of Shoes</a>
     </nav>
   </head>
+  <div>
   <body>
-    <div>
     <% shoe.forEach(allShoes => { %>
-      <li>
+      <p>
         <form action="/shoecollection/<%= allShoes._id %>?_method=DELETE" method="POST">
           <input type="submit" value="DELETE">
         </form>
         <a href="/shoecollection/<%=allShoes._id %>/edit">Edit</a>
-      </li>
+      </p>
         <img src="<%=allShoes.image %>" alt="<%= allShoes.image %>"></a>
         <p>Price: </p>
         <p><%=allShoes.price; %></p>
         <p>Brand:</p>
         <p><%=allShoes.brand; %></p>
         <% }) %>
-      </div>
+
   </body>
 </html>
