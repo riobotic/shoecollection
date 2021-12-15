@@ -17,7 +17,7 @@ body {
     max-width: 70%;
     margin: 0 auto;
     display: grid;
-    flex-direction: left;
+    flex-direction: center;
     font-family: 'Zen Antique Soft';
 
 }
@@ -27,3 +27,8 @@ img {
     width: 25%;
     height: auto;
       };
+
+form {
+    text-align: center;
+    font-size: 45px;
+}

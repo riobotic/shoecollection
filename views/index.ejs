@@ -11,7 +11,7 @@
   </head>
   <body>
     <% shoe.forEach(allShoes => { %>
-        <img src="<%=allShoes.image %>" alt="<%= allShoes.image %>"></a>
+        <img src="<%=allShoes.image %>" alt="<%= allShoes.image %>">
         <p>Price: </p>
         <p><%=allShoes.price; %></p>
         <p>Brand:</p>
@@ -21,7 +21,7 @@
             <input type="submit" value="DELETE">
           </form>
           <form action="/shoecollection/<%=allShoes._id %>/edit" method="GET">
-            <input type="submit" value="EDIT">
+            <input type="submit" value="EDIT"></form>
         </p>
         <% }) %>
   </body>
